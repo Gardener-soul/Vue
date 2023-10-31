@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Vue</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  </head>
+
+  <body>
+    <div id="app">
+        <input type="checkbox" v-model="checked" id = "check"/>
+        <label for="check">{{ checked }}</label>
+
+        <hr>
+
+        <div> CheckedNames : {{ checkedNames }}</div>
+        <input type="checkbox" id="alice" value="Alice" v-model="checkedNames">
+        <label for="alice">Alice</label>
+        <input type="checkbox" id="gardener" value="Gardener" v-model="checkedNames">
+        <label for="gardener">Gardener</label>
+        <input type="checkbox" id="mimi" value="Mimi" v-model="checkedNames">
+        <label for="mimi">Mimi</label>
+
+        <hr>
+
+        <select v-model="selected">
+            <option value="" disabled>선택을 해주세요</option>
+            <option>Alice</option>
+            <option>Blice</option>
+            <option>Clice</option>
+            <option>Dlice</option>
+            <option>Gardener</option>
+        </select>
+        <div>{{ selected }}</div>
+    </div>
+    <script>
+      const { createApp, ref } = Vue;
+
+      const app = createApp({
+        setup() {
+            const checked = ref(false);
+            const checkedNames = ref([]);
+            const selected = ref("");
+
+          return {
+            checked,checkedNames,selected
+          };
+        },
+      });
+      app.mount("#app");
+    </script>
+  </body>
+</html>
