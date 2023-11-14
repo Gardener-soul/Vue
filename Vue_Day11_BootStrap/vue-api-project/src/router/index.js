@@ -3,14 +3,15 @@ import HomeView from "@/views/HomeView.vue";
 import YoutubeView from "@/views/YoutubeView.vue";
 import BoardView from "@/views/BoardView.vue";
 import KakaoView from "@/views/KakaoView.vue";
+import TMDBView from "@/views/TMDBView.vue";
 
 import BoardList from "@/components/board/BoardList.vue";
 import BoardCreate from "@/components/board/BoardCreate.vue";
 import BoardDetail from "@/components/board/BoardDetail.vue";
 import BoardUpdate from "@/components/board/BoardUpdate.vue";
 
-import kakaoMap from "@/components/kakao/kakaoMap.vue";
-
+import TMDBPopular from "@/components/tmdb/TMDBPopular.vue";
+import TMDBTopRated from "@/components/tmdb/TMDBTopRated.vue";
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -23,11 +24,6 @@ const router = createRouter({
       path: "/youtube",
       name: "youtube",
       component: YoutubeView,
-    },
-    {
-      path: "/kakao",
-      name: "kakao",
-      component: KakaoView,
     },
     {
       path: "/board",
@@ -53,6 +49,28 @@ const router = createRouter({
           path: "update",
           name: "boardUpdate",
           component: BoardUpdate,
+        },
+      ],
+    },
+    {
+      path: "/kakao",
+      name: "kakao",
+      component: KakaoView,
+    },
+    {
+      path: "/tmdb",
+      name: "tmdb",
+      component: TMDBView,
+      children: [
+        {
+          path: "popular",
+          name: "tmdbPopular",
+          component: TMDBPopular,
+        },
+        {
+          path: "toprated",
+          name: "tmdbTopRated",
+          component: TMDBTopRated,
         },
       ],
     },

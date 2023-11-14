@@ -4,7 +4,6 @@ import axios from "axios";
 
 export const useYoutubeStore = defineStore("youtube", () => {
   const videos = ref([]);
-  const selectedVideo = ref(null);
 
   const youtubeSearch = function (keyword) {
     const URL = "https://www.googleapis.com/youtube/v3/search";
@@ -26,8 +25,5 @@ export const useYoutubeStore = defineStore("youtube", () => {
       .catch(() => {});
   };
 
-  const clickVideo = function (video) {
-    selectedVideo.value = video;
-  };
-  return { videos, youtubeSearch, clickVideo, selectedVideo };
+  return { videos, youtubeSearch };
 });

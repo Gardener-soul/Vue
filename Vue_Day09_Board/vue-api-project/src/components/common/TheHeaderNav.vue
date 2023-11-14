@@ -1,36 +1,35 @@
 <template>
-    <div id="container">
-        <header>
-            <nav>
-                <RouterLink to="/">Home</RouterLink> |
-                <RouterLink to="/youtube">Youtube</RouterLink> |
-                <RouterLink :to="{ name: 'boardList' }">BoardList</RouterLink> |
-                <RouterLink :to="{ name: 'boardCreate' }">BoardCreate</RouterLink>
-            </nav>
-        </header>
-    </div>
+  <div id="container">
+    <header>
+      <nav>
+        <RouterLink to="/">Home</RouterLink> |
+        <RouterLink to="/youtube">Youtube</RouterLink> |
+        <RouterLink :to="{ name: 'boardList' }">BoardList</RouterLink> |
+        <RouterLink :to="{ name: 'boardCreate' }">BoardCreate</RouterLink> |
+        <RouterLink to="/kakao">Kakao</RouterLink> |
+      </nav>
+    </header>
+  </div>
 </template>
 
-<script setup>
+<script setup></script>
 
-</script>
-
-<style  scoped>
+<style scoped>
 #container {
-    text-align: center;
+  text-align: center;
 }
 
 nav {
-    padding: 30px
+  padding: 30px;
 }
 
 nav a {
-    font-weight: bold;
-    text-decoration: none;
-    color: black;
+  font-weight: bold;
+  text-decoration: none;
+  color: black;
 }
 
 nav a.router-link-exact-active {
-    color: #42b983
+  color: #42b983;
 }
 </style>
